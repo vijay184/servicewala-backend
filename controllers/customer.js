@@ -92,7 +92,7 @@ console.log("aa gaya", req.query);
     const proximityUsers = await Service_Provider.find({}).exec(); // Use .exec() to execute the query and get the results as an array.
     // console.log(proximityUsers);
     console.log("tyagi");
-    const maxDistance = 3000; // 5000 meters (5 kilometers) proximity
+    const maxDistance = 10000; // 5000 meters (5 kilometers) proximity
     const filtered_provider = proximityUsers.filter((user) => {
     const userLat = user.latitude;
     const userLon = user.longitude;
