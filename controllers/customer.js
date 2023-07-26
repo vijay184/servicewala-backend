@@ -32,6 +32,11 @@ export const register = async (req, res, next) => {
 
     if (user) return next(new ErrorHandler("User Already Exist", 400));
 
+    const image = req.file ? {
+      data: req.file.buffer, // The binary image data from multer
+      contentType: req.file.mimetype, // The MIME type of the image from multer
+    } : undefined;
+
 
     const hashedPassword = await bcrypt.hash(password, 10);
 
