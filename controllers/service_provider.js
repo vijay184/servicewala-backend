@@ -71,8 +71,6 @@ export const logout = (req, res) => {
 };
 
 export const fetchLocation = async (req,res,next) => {
-  console.log("pahuch gaya");
-  console.log(req.body);
   try {
       const {email,latitude,longitude} = req.body;
   
