@@ -5,7 +5,6 @@ export const getPending = async (req, res) => {
   try {
     const {sp_email} = req.query;
     let pendingRequest = await Pending.find({ sp_email });
-    console.log(pendingRequest)
     res.status(200).json({
         success: true,
         pendingRequest
@@ -20,7 +19,6 @@ export const getOnePending = async (req, res) => {
   try {
     const { sp_email, cust_email } = req.query;
     let pendingRequest = await Pending.find({ sp_email, cust_email });
-    console.log(pendingRequest);
     res.status(200).json({
       success: true,
       pendingRequest,
@@ -32,8 +30,6 @@ export const getOnePending = async (req, res) => {
 
 
 export const setPending = async (req, res) => {
-    console.log(req.body);
-    console.log(req.query);
     try {
       const { sp_email,cust_email,name,mobile_number,address,latitude,longitude } = req.body;
       let pendingRequest = await Pending.findOne({ sp_email,cust_email });
